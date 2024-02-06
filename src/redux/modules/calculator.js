@@ -20,9 +20,9 @@ const initialState = {
 const calculator = (state = initialState, action) => {
   switch (action.type) {
     case PLUS_NUMBER:
+      const value = Number(action.payload); // target.value가 문자열이라 value를 숫자로 바꿔줌
       return {
-        ...state,
-        number: state.number + action.payload,
+        number: state.number + value,
       };
     case MINUS_NUMBER:
       return {
